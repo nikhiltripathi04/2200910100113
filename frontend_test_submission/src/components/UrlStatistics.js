@@ -45,7 +45,9 @@ const UrlStatistics = ({ shortUrlId }) => {
               <li key={index}>
                 <p><strong>Timestamp:</strong> {new Date(click.timestamp).toLocaleString()}</p>
                 <p><strong>IP Address:</strong> {click.ipAddress}</p>
-                {/*  */}
+                {click.geo && click.geo.city && (
+                  <p><strong>Location:</strong> {click.geo.city}, {click.geo.country}</p>
+                )}
               </li>
             ))}
           </ul>
